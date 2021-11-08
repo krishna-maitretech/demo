@@ -1,14 +1,11 @@
 name: deploy website
-types: vercel-event
+on: push
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ngduc/vercel-deploy-action@master
-        working-directory: ./shivam
       - name: deploying
         run: now -t uTjiMesILjANiKGX1SdIqEDJ -c --prod --name=shivam 
-        run: now domain add shivam.lonchmysite.com
         
          
