@@ -5,9 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Moving to Directory
-        run:  cd shivam && pwd && ls -l
       - name: deploying 
-        run: vercel deploy . -t uTjiMesILjANiKGX1SdIqEDJ -c --prod --name=shivam 
+        working-directory: ./shivam
+        run: vercel -t uTjiMesILjANiKGX1SdIqEDJ -c --prod --name=shivam 
         
          
