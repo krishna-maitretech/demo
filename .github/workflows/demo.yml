@@ -8,6 +8,6 @@ jobs:
       - name: Moving to Directory
         run:  cd shivam && pwd && ls -l
       - name: deploying 
-        run: now -t uTjiMesILjANiKGX1SdIqEDJ -c --prod --name=shivam 
+        run: vercel deploy . -t uTjiMesILjANiKGX1SdIqEDJ -c --prod --name=shivam 
         
          
