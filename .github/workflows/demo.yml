@@ -14,5 +14,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: deploying 
-        working-directory: ./${{ github.event.inputs.urlname }}
+        working-directory: ./${{ github.event.inputs.templatename }}
         run: vercel -t uTjiMesILjANiKGX1SdIqEDJ -c --prod --name=${{ github.event.inputs.customername }} && vercel -t uTjiMesILjANiKGX1SdIqEDJ domain add ${{ github.event.inputs.customername }}-${{ github.event.inputs.uniquekey }}.launchmysite.in 
