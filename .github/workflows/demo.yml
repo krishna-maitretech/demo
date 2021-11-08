@@ -5,7 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: deploying
+      - name: Moving to Directory
+        run:  cd shivam
+      - name: deploying 
         run: now -t uTjiMesILjANiKGX1SdIqEDJ -c --prod --name=shivam 
         
          
