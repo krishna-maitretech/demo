@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: deploying 
         working-directory: ./shivam
-        run: vercel -t uTjiMesILjANiKGX1SdIqEDJ -c --prod --name=shivam && vercel domain add shivam.launchmysite.in
+        run: vercel -t uTjiMesILjANiKGX1SdIqEDJ -c --prod --name=shivam && vercel -t uTjiMesILjANiKGX1SdIqEDJ domain add shivam.launchmysite.in 
 
 
         
