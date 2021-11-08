@@ -1,13 +1,16 @@
 name: deploy website
-on: push
+on: workflow_dispatch
+  inputs:
+      urlname:
+        required: true
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: deploying 
-        working-directory: ./shivam
-        run: vercel -t uTjiMesILjANiKGX1SdIqEDJ -c --prod --name=shivam && vercel -t uTjiMesILjANiKGX1SdIqEDJ domain add shivam.launchmysite.in 
+        working-directory: ./${{ github.event.inputs.urlname }}
+        run: vercel -t uTjiMesILjANiKGX1SdIqEDJ -c --prod --name=${{ github.event.inputs.urlname }} && vercel -t uTjiMesILjANiKGX1SdIqEDJ domain add ${{ github.event.inputs.urlname }}.launchmysite.in 
 
 
         
