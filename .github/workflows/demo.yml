@@ -2,8 +2,12 @@ name: deploy website
 on:
    workflow_dispatch:
     inputs:
-      urlname:
+      templatename:
         required: true
+      customername:
+        required: true
+      uniquekey:
+        required: true        
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -11,4 +15,4 @@ jobs:
       - uses: actions/checkout@v2
       - name: deploying 
         working-directory: ./${{ github.event.inputs.urlname }}
-        run: vercel -t uTjiMesILjANiKGX1SdIqEDJ -c --prod --name=${{ github.event.inputs.urlname }} && vercel -t uTjiMesILjANiKGX1SdIqEDJ domain add ${{ github.event.inputs.urlname }}.launchmysite.in 
+        run: vercel -t uTjiMesILjANiKGX1SdIqEDJ -c --prod --name=${{ github.event.inputs.customername }} && vercel -t uTjiMesILjANiKGX1SdIqEDJ domain add ${{ github.event.inputs.customername }}-${{ github.event.inputs.uniquekey }}.launchmysite.in 
