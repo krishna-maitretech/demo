@@ -5,12 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
       - uses: ngduc/vercel-deploy-action@master
-        with:
-          vercel-cli: vercel # optional ("vercel" or "now")
-          vercel-token: uTjiMesILjANiKGX1SdIqEDJ 
-          working-directory: ./shivam
-          run: now -t uTjiMesILjANiKGX1SdIqEDJ -c --prod --name=shivam 
-          run: 'now domain add shivam.lonchmysite.com' 
-          
+        working-directory: ./shivam
+      - name: deploying
+        run: now -t uTjiMesILjANiKGX1SdIqEDJ -c --prod --name=shivam 
+        run: now domain add shivam.lonchmysite.com
+        
+         
